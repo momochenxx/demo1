@@ -24,8 +24,8 @@
     </servlet-mapping>
 
     <!-- 配置文件所在位置 -->
-    <!--<context-param>-->
-        <!--<param-name>contextConfigLocation</param-name>-->
-        <!--<param-value>classpath:applicationContext.xml</param-value>-->
-    <!--</context-param>-->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:applicationContext.xml</param-value>
+    </context-param>
 </web-app>

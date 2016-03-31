@@ -1,20 +1,27 @@
 package com.momochen.model;
 
-/**
- * Created by momochen on 2016/3/31.
- */
 public class User {
-    private int id;
+    private Integer uid;
+
     private String uname;
+
     private String upass;
 
-
-    public int getId() {
-        return id;
+    @Override
+    public String toString() {
+        return "User{" +
+                "uid=" + uid +
+                ", uname='" + uname + '\'' +
+                ", upass='" + upass + '\'' +
+                '}';
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public Integer getUid() {
+        return uid;
+    }
+
+    public void setUid(Integer uid) {
+        this.uid = uid;
     }
 
     public String getUname() {
@@ -22,7 +29,7 @@ public class User {
     }
 
     public void setUname(String uname) {
-        this.uname = uname;
+        this.uname = uname == null ? null : uname.trim();
     }
 
     public String getUpass() {
@@ -30,6 +37,6 @@ public class User {
     }
 
     public void setUpass(String upass) {
-        this.upass = upass;
+        this.upass = upass == null ? null : upass.trim();
     }
 }

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+     http://www.springframework.org/schema/beans/spring-beans.xsd
+     http://www.springframework.org/schema/context
+     http://www.springframework.org/schema/context/spring-context.xsd
+     http://www.springframework.org/schema/aop
+     http://www.springframework.org/schema/aop/spring-aop.xsd
+     http://www.springframework.org/schema/tx
+     http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!-- 加载数据库配置文件 -->
+    <import resource="applicationContext-mybatis.xml"></import>
+
+    <!-- redis配置文件 -->
+    <!--<import resource="applicationContext-redis.xml"></import>-->
+
+    <!-- 自动扫描注解Bean -->
+    <context:component-scan base-package="com.momochen">
+        <!-- spring context 只扫描service以及Repositiry标示的 bean -->
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Service" />
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Repository" />
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Component" />
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+    </context:component-scan>
+
+
+    <!-- 启动对@AspectJ注解的支持 -->
+    <aop:aspectj-autoproxy/>
+
+    <!-- 全局异常配置 -->
+    <!--<bean id="exceptionHandler" class="com.xinshu.common.MyExceptionHandler"/>-->
+</beans>
