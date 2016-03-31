@@ -22,8 +22,8 @@
         <!-- spring context 只扫描service以及Repositiry标示的 bean -->
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Service" />
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Repository" />
-        <context:include-filter type="annotation" expression="org.springframework.stereotype.Component" />
-        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+        <!--<context:include-filter type="annotation" expression="org.springframework.stereotype.Component" />-->
+        <!--<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />-->
     </context:component-scan>
 
 
