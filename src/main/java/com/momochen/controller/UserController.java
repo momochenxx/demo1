@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * Created by momochen on 2016/3/31.
  */
 @Controller
+@RequestMapping("/user")
 public class UserController {
 
     @Autowired
