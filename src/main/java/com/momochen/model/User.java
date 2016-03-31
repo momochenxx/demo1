@@ -8,6 +8,7 @@ public class User {
     private String uname;
     private String upass;
 
+
     public int getId() {
         return id;
     }
